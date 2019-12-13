@@ -8,5 +8,11 @@
     <a class="p-2 text-dark" href="#">Support</a>
     <a class="p-2 text-dark" href="#">Pricing</a>
   </nav>
-  <%= link_to "Sign in", new_user_session_url, class: "btn btn-outline-primary" %>
+  <% if user_signed_in? %>
+    <div class="navbar-currentuser"><%= current_user.email %></div>
+    <%= link_to "Sign out", sign_out_url, class: "btn btn-outline-primary" %>
+    <% elsif %>
+    <%= link_to "Sign in", sign_in_url, class: "btn btn-outline-primary" %>
+    <%= link_to "Sign up", new_user_registration_url, class: "btn btn-outline-primary" %>
+  <% end %>
 </div>

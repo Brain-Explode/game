@@ -59,3 +59,4 @@ gem 'cancancan'
 gem 'rubocop', require: false
 gem 'mini_magick', '~> 4.8'
 gem 'pry', '~> 0.12.2'
+gem 'simple_form'

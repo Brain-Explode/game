@@ -1,1 +1,16 @@
-<p>show</p>
+<h1>User settings</h1>
+<% if @user.image.present? %>
+<h3>Your avatar:</h3>
+	<div style="width:500px">
+		<%= image_tag(current_user.image, style:'width:100%') %>
+	</div>
+<% end %>
+<%= simple_form_for(current_user, html: { class: 'form-inline' }) do |f| %>
+	<%= f.error_notification %>
+	<div class="col-md-6 mb-3">
+		<%= f.input :image, as: :file %>
+    <div class="col-sm-9 offset-sm-3">
+			<%= f.button :submit, class: "btn-primary" %>
+		</div>
+	</div>
+<% end %>

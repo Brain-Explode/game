@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  before_create :assign_default_role
+  before_create :assign_default_rolez
 
   def assign_default_role
     self.role = "player"

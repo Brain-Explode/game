@@ -1,5 +1,13 @@
-<p><% @user.each do |f| %>
-	<%= f.email %>
-	<%= f.role %> <br>
-<% end %>
+<p>
+	<% @user.each do |f| %>
+		<div style="width:55px; float:left">
+			<% if f.image.present? %>
+				<%= image_tag(f.image, style: "width:50px") %>
+			<% end %>
+		</div>
+		<%= f.email %>
+		<%= f.role %>
+		<br>
+		<br>
+	<% end %>
 </p>

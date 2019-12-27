@@ -5,11 +5,19 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		binding.pry
+		@user = User.find(params[:id])
+	end
+
+	def update
 		@user = User.find(params[:id])
 
-		# authorize! :show, @user
+		if @user.update(user_params)
+			redirect_to @user
+		else
+			render 'show'
+		end
 	end
+
 
 	def user_params
   	params.require(:user).permit(:email, :role, :image)

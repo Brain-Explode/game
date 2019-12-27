@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+	has_one_attached :image
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,6 +9,5 @@ class User < ApplicationRecord
 
   def assign_default_role
     self.role = "player"
-
-   end
+  end
 end

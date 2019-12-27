@@ -56,3 +56,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'cancancan'
+gem 'rubocop', require: false
+gem 'mini_magick', '~> 4.8'
+gem 'pry', '~> 0.12.2'

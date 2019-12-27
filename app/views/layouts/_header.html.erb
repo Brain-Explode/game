@@ -12,7 +12,9 @@
     <a class="p-2 text-dark" href="#">Pricing</a>
   </nav>
   <% if user_signed_in? %>
-    <div class="navbar-currentuser"><%= current_user.email %></div>
+
+    <div class="navbar-currentuser"><%= link_to current_user.email, user_url %></div>
+
     <%= link_to "Sign out", sign_out_url, class: "btn btn-outline-primary" %>
     <% elsif %>
     <%= link_to "Sign in", sign_in_url, class: "btn btn-outline-primary" %>

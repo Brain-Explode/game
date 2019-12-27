@@ -13,7 +13,8 @@
   </nav>
   <% if user_signed_in? %>
 
-    <div class="navbar-currentuser"><%= link_to current_user.email, user_url %></div>
+    <% binding.pry %>
+    <div class="navbar-currentuser"><%= link_to current_user.email, current_user %></div>
 
     <%= link_to "Sign out", sign_out_url, class: "btn btn-outline-primary" %>
     <% elsif %>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 		binding.pry
 		@user = User.find(params[:id])
 
-		authorize! :show, @user
+		# authorize! :show, @user
 	end
 
 	def user_params
